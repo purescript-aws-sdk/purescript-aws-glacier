@@ -13,19 +13,19 @@ import AWS.Glacier.Types as GlacierTypes
 
 
 -- | <p>This operation aborts a multipart upload identified by the upload ID.</p> <p>After the Abort Multipart Upload request succeeds, you cannot upload any more parts to the multipart upload or complete the multipart upload. Aborting a completed upload fails. However, aborting an already-aborted upload will succeed, for a short time. For more information about uploading a part and completing a multipart upload, see <a>UploadMultipartPart</a> and <a>CompleteMultipartUpload</a>.</p> <p>This operation is idempotent.</p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
-abortMultipartUpload :: forall eff. Glacier.Service -> GlacierTypes.AbortMultipartUploadInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+abortMultipartUpload :: forall eff. Glacier.Service -> GlacierTypes.AbortMultipartUploadInput -> Aff (exception :: EXCEPTION | eff) Unit
 abortMultipartUpload (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "abortMultipartUpload"
 
 
 -- | <p>This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code> state. If the vault lock is in the <code>Locked</code> state when this operation is requested, the operation returns an <code>AccessDeniedException</code> error. Aborting the vault locking process removes the vault lock policy from the specified vault. </p> <p>A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>. A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>. You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information about the vault locking process, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon Glacier Access Control with Vault Lock Policies</a>. </p> <p>This operation is idempotent. You can successfully invoke this operation multiple times, if the vault lock is in the <code>InProgress</code> state or if there is no policy associated with the vault.</p>
-abortVaultLock :: forall eff. Glacier.Service -> GlacierTypes.AbortVaultLockInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+abortVaultLock :: forall eff. Glacier.Service -> GlacierTypes.AbortVaultLockInput -> Aff (exception :: EXCEPTION | eff) Unit
 abortVaultLock (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "abortVaultLock"
 
 
 -- | <p>This operation adds the specified tags to a vault. Each tag is composed of a key and a value. Each vault can have up to 10 tags. If your request would cause the tag limit for the vault to be exceeded, the operation throws the <code>LimitExceededException</code> error. If a tag already exists on the vault under a specified key, the existing key value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. </p>
-addTagsToVault :: forall eff. Glacier.Service -> GlacierTypes.AddTagsToVaultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+addTagsToVault :: forall eff. Glacier.Service -> GlacierTypes.AddTagsToVaultInput -> Aff (exception :: EXCEPTION | eff) Unit
 addTagsToVault (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "addTagsToVault"
 
@@ -37,7 +37,7 @@ completeMultipartUpload (Glacier.Service serviceImpl) = AWS.request serviceImpl 
 
 
 -- | <p>This operation completes the vault locking process by transitioning the vault lock from the <code>InProgress</code> state to the <code>Locked</code> state, which causes the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>. You can obtain the state of the vault lock by calling <a>GetVaultLock</a>. For more information about the vault locking process, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon Glacier Vault Lock</a>. </p> <p>This operation is idempotent. This request is always successful if the vault lock is in the <code>Locked</code> state and the provided lock ID matches the lock ID originally used to lock the vault.</p> <p>If an invalid lock ID is passed in the request when the vault lock is in the <code>Locked</code> state, the operation returns an <code>AccessDeniedException</code> error. If an invalid lock ID is passed in the request when the vault lock is in the <code>InProgress</code> state, the operation throws an <code>InvalidParameter</code> error.</p>
-completeVaultLock :: forall eff. Glacier.Service -> GlacierTypes.CompleteVaultLockInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+completeVaultLock :: forall eff. Glacier.Service -> GlacierTypes.CompleteVaultLockInput -> Aff (exception :: EXCEPTION | eff) Unit
 completeVaultLock (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "completeVaultLock"
 
@@ -49,25 +49,25 @@ createVault (Glacier.Service serviceImpl) = AWS.request serviceImpl method  wher
 
 
 -- | <p>This operation deletes an archive from a vault. Subsequent requests to initiate a retrieval of this archive will fail. Archive retrievals that are in progress for this archive ID may or may not succeed according to the following scenarios:</p> <ul> <li> <p>If the archive retrieval job is actively preparing the data for download when Amazon Glacier receives the delete archive request, the archival retrieval operation might fail.</p> </li> <li> <p>If the archive retrieval job has successfully prepared the archive for download when Amazon Glacier receives the delete archive request, you will be able to download the output.</p> </li> </ul> <p>This operation is idempotent. Attempting to delete an already-deleted archive does not result in an error.</p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting an Archive in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
-deleteArchive :: forall eff. Glacier.Service -> GlacierTypes.DeleteArchiveInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteArchive :: forall eff. Glacier.Service -> GlacierTypes.DeleteArchiveInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteArchive (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteArchive"
 
 
 -- | <p>This operation deletes a vault. Amazon Glacier will delete a vault only if there are no archives in the vault as of the last inventory and there have been no writes to the vault since the last inventory. If either of these conditions is not satisfied, the vault deletion fails (that is, the vault is not removed) and Amazon Glacier returns an error. You can use <a>DescribeVault</a> to return the number of archives in a vault, and you can use <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate a Job (POST jobs)</a> to initiate a new inventory retrieval for a vault. The inventory contains the archive IDs you use to delete archives using <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete Archive (DELETE archive)</a>.</p> <p>This operation is idempotent.</p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting a Vault in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
-deleteVault :: forall eff. Glacier.Service -> GlacierTypes.DeleteVaultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteVault :: forall eff. Glacier.Service -> GlacierTypes.DeleteVaultInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteVault (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteVault"
 
 
 -- | <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p> <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
-deleteVaultAccessPolicy :: forall eff. Glacier.Service -> GlacierTypes.DeleteVaultAccessPolicyInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteVaultAccessPolicy :: forall eff. Glacier.Service -> GlacierTypes.DeleteVaultAccessPolicyInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteVaultAccessPolicy (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteVaultAccessPolicy"
 
 
 -- | <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent; that is, it might take some time for Amazon Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request.</p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. </p>
-deleteVaultNotifications :: forall eff. Glacier.Service -> GlacierTypes.DeleteVaultNotificationsInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteVaultNotifications :: forall eff. Glacier.Service -> GlacierTypes.DeleteVaultNotificationsInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteVaultNotifications (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteVaultNotifications"
 
@@ -175,25 +175,25 @@ purchaseProvisionedCapacity (Glacier.Service serviceImpl) = AWS.request serviceI
 
 
 -- | <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>
-removeTagsFromVault :: forall eff. Glacier.Service -> GlacierTypes.RemoveTagsFromVaultInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+removeTagsFromVault :: forall eff. Glacier.Service -> GlacierTypes.RemoveTagsFromVaultInput -> Aff (exception :: EXCEPTION | eff) Unit
 removeTagsFromVault (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "removeTagsFromVault"
 
 
 -- | <p>This operation sets and then enacts a data retrieval policy in the region specified in the PUT request. You can set one policy per region for an AWS account. The policy is enacted within a few minutes of a successful PUT operation.</p> <p>The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted. For more information about data retrieval policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon Glacier Data Retrieval Policies</a>. </p>
-setDataRetrievalPolicy :: forall eff. Glacier.Service -> GlacierTypes.SetDataRetrievalPolicyInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setDataRetrievalPolicy :: forall eff. Glacier.Service -> GlacierTypes.SetDataRetrievalPolicyInput -> Aff (exception :: EXCEPTION | eff) Unit
 setDataRetrievalPolicy (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setDataRetrievalPolicy"
 
 
 -- | <p>This operation configures an access policy for a vault and will overwrite an existing policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code> subresource of the vault. An access policy is specific to a vault and is also called a vault subresource. You can set one access policy per vault and the policy can be up to 20 KB in size. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
-setVaultAccessPolicy :: forall eff. Glacier.Service -> GlacierTypes.SetVaultAccessPolicyInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setVaultAccessPolicy :: forall eff. Glacier.Service -> GlacierTypes.SetVaultAccessPolicyInput -> Aff (exception :: EXCEPTION | eff) Unit
 setVaultAccessPolicy (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setVaultAccessPolicy"
 
 
 -- | <p>This operation configures notifications that will be sent when specific events happen to a vault. By default, you don't get any notifications.</p> <p>To configure vault notifications, send a PUT request to the <code>notification-configuration</code> subresource of the vault. The request should include a JSON document that provides an Amazon SNS topic and specific events for which you want Amazon Glacier to send notifications to the topic.</p> <p>Amazon SNS topics must grant permission to the vault to be allowed to publish notifications to the topic. You can configure a vault to publish a notification for the following vault events:</p> <ul> <li> <p> <b>ArchiveRetrievalCompleted</b> This event occurs when a job that was initiated for an archive retrieval is completed (<a>InitiateJob</a>). The status of the completed job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the same output as returned from <a>DescribeJob</a>. </p> </li> <li> <p> <b>InventoryRetrievalCompleted</b> This event occurs when a job that was initiated for an inventory retrieval is completed (<a>InitiateJob</a>). The status of the completed job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the same output as returned from <a>DescribeJob</a>. </p> </li> </ul> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
-setVaultNotifications :: forall eff. Glacier.Service -> GlacierTypes.SetVaultNotificationsInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setVaultNotifications :: forall eff. Glacier.Service -> GlacierTypes.SetVaultNotificationsInput -> Aff (exception :: EXCEPTION | eff) Unit
 setVaultNotifications (Glacier.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setVaultNotifications"
 

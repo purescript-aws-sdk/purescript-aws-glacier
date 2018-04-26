@@ -110,7 +110,7 @@ Encode ActionCode
 
 ``` purescript
 newtype AddTagsToVaultInput
-  = AddTagsToVaultInput { accountId :: String, vaultName :: String, "Tags" :: NullOrUndefined (TagMap) }
+  = AddTagsToVaultInput { accountId :: String, vaultName :: String, "Tags" :: Maybe (TagMap) }
 ```
 
 <p>The input values for <code>AddTagsToVault</code>.</p>
@@ -135,7 +135,7 @@ Constructs AddTagsToVaultInput from required parameters
 #### `newAddTagsToVaultInput'`
 
 ``` purescript
-newAddTagsToVaultInput' :: String -> String -> ({ accountId :: String, vaultName :: String, "Tags" :: NullOrUndefined (TagMap) } -> { accountId :: String, vaultName :: String, "Tags" :: NullOrUndefined (TagMap) }) -> AddTagsToVaultInput
+newAddTagsToVaultInput' :: String -> String -> ({ accountId :: String, vaultName :: String, "Tags" :: Maybe (TagMap) } -> { accountId :: String, vaultName :: String, "Tags" :: Maybe (TagMap) }) -> AddTagsToVaultInput
 ```
 
 Constructs AddTagsToVaultInput's fields from required parameters
@@ -144,7 +144,7 @@ Constructs AddTagsToVaultInput's fields from required parameters
 
 ``` purescript
 newtype ArchiveCreationOutput
-  = ArchiveCreationOutput { location :: NullOrUndefined (String), checksum :: NullOrUndefined (String), archiveId :: NullOrUndefined (String) }
+  = ArchiveCreationOutput { location :: Maybe (String), checksum :: Maybe (String), archiveId :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p> <p>For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.</p>
@@ -169,7 +169,7 @@ Constructs ArchiveCreationOutput from required parameters
 #### `newArchiveCreationOutput'`
 
 ``` purescript
-newArchiveCreationOutput' :: ({ location :: NullOrUndefined (String), checksum :: NullOrUndefined (String), archiveId :: NullOrUndefined (String) } -> { location :: NullOrUndefined (String), checksum :: NullOrUndefined (String), archiveId :: NullOrUndefined (String) }) -> ArchiveCreationOutput
+newArchiveCreationOutput' :: ({ location :: Maybe (String), checksum :: Maybe (String), archiveId :: Maybe (String) } -> { location :: Maybe (String), checksum :: Maybe (String), archiveId :: Maybe (String) }) -> ArchiveCreationOutput
 ```
 
 Constructs ArchiveCreationOutput's fields from required parameters
@@ -178,7 +178,7 @@ Constructs ArchiveCreationOutput's fields from required parameters
 
 ``` purescript
 newtype CSVInput
-  = CSVInput { "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo), "Comments" :: NullOrUndefined (String), "QuoteEscapeCharacter" :: NullOrUndefined (String), "RecordDelimiter" :: NullOrUndefined (String), "FieldDelimiter" :: NullOrUndefined (String), "QuoteCharacter" :: NullOrUndefined (String) }
+  = CSVInput { "FileHeaderInfo" :: Maybe (FileHeaderInfo), "Comments" :: Maybe (String), "QuoteEscapeCharacter" :: Maybe (String), "RecordDelimiter" :: Maybe (String), "FieldDelimiter" :: Maybe (String), "QuoteCharacter" :: Maybe (String) }
 ```
 
 <p>Contains information about the comma-separated value (CSV) file to select from.</p>
@@ -203,7 +203,7 @@ Constructs CSVInput from required parameters
 #### `newCSVInput'`
 
 ``` purescript
-newCSVInput' :: ({ "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo), "Comments" :: NullOrUndefined (String), "QuoteEscapeCharacter" :: NullOrUndefined (String), "RecordDelimiter" :: NullOrUndefined (String), "FieldDelimiter" :: NullOrUndefined (String), "QuoteCharacter" :: NullOrUndefined (String) } -> { "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo), "Comments" :: NullOrUndefined (String), "QuoteEscapeCharacter" :: NullOrUndefined (String), "RecordDelimiter" :: NullOrUndefined (String), "FieldDelimiter" :: NullOrUndefined (String), "QuoteCharacter" :: NullOrUndefined (String) }) -> CSVInput
+newCSVInput' :: ({ "FileHeaderInfo" :: Maybe (FileHeaderInfo), "Comments" :: Maybe (String), "QuoteEscapeCharacter" :: Maybe (String), "RecordDelimiter" :: Maybe (String), "FieldDelimiter" :: Maybe (String), "QuoteCharacter" :: Maybe (String) } -> { "FileHeaderInfo" :: Maybe (FileHeaderInfo), "Comments" :: Maybe (String), "QuoteEscapeCharacter" :: Maybe (String), "RecordDelimiter" :: Maybe (String), "FieldDelimiter" :: Maybe (String), "QuoteCharacter" :: Maybe (String) }) -> CSVInput
 ```
 
 Constructs CSVInput's fields from required parameters
@@ -212,7 +212,7 @@ Constructs CSVInput's fields from required parameters
 
 ``` purescript
 newtype CSVOutput
-  = CSVOutput { "QuoteFields" :: NullOrUndefined (QuoteFields), "QuoteEscapeCharacter" :: NullOrUndefined (String), "RecordDelimiter" :: NullOrUndefined (String), "FieldDelimiter" :: NullOrUndefined (String), "QuoteCharacter" :: NullOrUndefined (String) }
+  = CSVOutput { "QuoteFields" :: Maybe (QuoteFields), "QuoteEscapeCharacter" :: Maybe (String), "RecordDelimiter" :: Maybe (String), "FieldDelimiter" :: Maybe (String), "QuoteCharacter" :: Maybe (String) }
 ```
 
 <p>Contains information about the comma-separated value (CSV) file that the job results are stored in.</p>
@@ -237,7 +237,7 @@ Constructs CSVOutput from required parameters
 #### `newCSVOutput'`
 
 ``` purescript
-newCSVOutput' :: ({ "QuoteFields" :: NullOrUndefined (QuoteFields), "QuoteEscapeCharacter" :: NullOrUndefined (String), "RecordDelimiter" :: NullOrUndefined (String), "FieldDelimiter" :: NullOrUndefined (String), "QuoteCharacter" :: NullOrUndefined (String) } -> { "QuoteFields" :: NullOrUndefined (QuoteFields), "QuoteEscapeCharacter" :: NullOrUndefined (String), "RecordDelimiter" :: NullOrUndefined (String), "FieldDelimiter" :: NullOrUndefined (String), "QuoteCharacter" :: NullOrUndefined (String) }) -> CSVOutput
+newCSVOutput' :: ({ "QuoteFields" :: Maybe (QuoteFields), "QuoteEscapeCharacter" :: Maybe (String), "RecordDelimiter" :: Maybe (String), "FieldDelimiter" :: Maybe (String), "QuoteCharacter" :: Maybe (String) } -> { "QuoteFields" :: Maybe (QuoteFields), "QuoteEscapeCharacter" :: Maybe (String), "RecordDelimiter" :: Maybe (String), "FieldDelimiter" :: Maybe (String), "QuoteCharacter" :: Maybe (String) }) -> CSVOutput
 ```
 
 Constructs CSVOutput's fields from required parameters
@@ -262,7 +262,7 @@ Encode CannedACL
 
 ``` purescript
 newtype CompleteMultipartUploadInput
-  = CompleteMultipartUploadInput { accountId :: String, vaultName :: String, uploadId :: String, archiveSize :: NullOrUndefined (String), checksum :: NullOrUndefined (String) }
+  = CompleteMultipartUploadInput { accountId :: String, vaultName :: String, uploadId :: String, archiveSize :: Maybe (String), checksum :: Maybe (String) }
 ```
 
 <p>Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon Glacier can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Amazon Glacier returns the URI path of the newly created archive resource.</p>
@@ -287,7 +287,7 @@ Constructs CompleteMultipartUploadInput from required parameters
 #### `newCompleteMultipartUploadInput'`
 
 ``` purescript
-newCompleteMultipartUploadInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, uploadId :: String, archiveSize :: NullOrUndefined (String), checksum :: NullOrUndefined (String) } -> { accountId :: String, vaultName :: String, uploadId :: String, archiveSize :: NullOrUndefined (String), checksum :: NullOrUndefined (String) }) -> CompleteMultipartUploadInput
+newCompleteMultipartUploadInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, uploadId :: String, archiveSize :: Maybe (String), checksum :: Maybe (String) } -> { accountId :: String, vaultName :: String, uploadId :: String, archiveSize :: Maybe (String), checksum :: Maybe (String) }) -> CompleteMultipartUploadInput
 ```
 
 Constructs CompleteMultipartUploadInput's fields from required parameters
@@ -364,7 +364,7 @@ Constructs CreateVaultInput's fields from required parameters
 
 ``` purescript
 newtype CreateVaultOutput
-  = CreateVaultOutput { location :: NullOrUndefined (String) }
+  = CreateVaultOutput { location :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -389,7 +389,7 @@ Constructs CreateVaultOutput from required parameters
 #### `newCreateVaultOutput'`
 
 ``` purescript
-newCreateVaultOutput' :: ({ location :: NullOrUndefined (String) } -> { location :: NullOrUndefined (String) }) -> CreateVaultOutput
+newCreateVaultOutput' :: ({ location :: Maybe (String) } -> { location :: Maybe (String) }) -> CreateVaultOutput
 ```
 
 Constructs CreateVaultOutput's fields from required parameters
@@ -398,7 +398,7 @@ Constructs CreateVaultOutput's fields from required parameters
 
 ``` purescript
 newtype DataRetrievalPolicy
-  = DataRetrievalPolicy { "Rules" :: NullOrUndefined (DataRetrievalRulesList) }
+  = DataRetrievalPolicy { "Rules" :: Maybe (DataRetrievalRulesList) }
 ```
 
 <p>Data retrieval policy.</p>
@@ -423,7 +423,7 @@ Constructs DataRetrievalPolicy from required parameters
 #### `newDataRetrievalPolicy'`
 
 ``` purescript
-newDataRetrievalPolicy' :: ({ "Rules" :: NullOrUndefined (DataRetrievalRulesList) } -> { "Rules" :: NullOrUndefined (DataRetrievalRulesList) }) -> DataRetrievalPolicy
+newDataRetrievalPolicy' :: ({ "Rules" :: Maybe (DataRetrievalRulesList) } -> { "Rules" :: Maybe (DataRetrievalRulesList) }) -> DataRetrievalPolicy
 ```
 
 Constructs DataRetrievalPolicy's fields from required parameters
@@ -432,7 +432,7 @@ Constructs DataRetrievalPolicy's fields from required parameters
 
 ``` purescript
 newtype DataRetrievalRule
-  = DataRetrievalRule { "Strategy" :: NullOrUndefined (String), "BytesPerHour" :: NullOrUndefined (NullableLong) }
+  = DataRetrievalRule { "Strategy" :: Maybe (String), "BytesPerHour" :: Maybe (NullableLong) }
 ```
 
 <p>Data retrieval policy rule.</p>
@@ -457,7 +457,7 @@ Constructs DataRetrievalRule from required parameters
 #### `newDataRetrievalRule'`
 
 ``` purescript
-newDataRetrievalRule' :: ({ "Strategy" :: NullOrUndefined (String), "BytesPerHour" :: NullOrUndefined (NullableLong) } -> { "Strategy" :: NullOrUndefined (String), "BytesPerHour" :: NullOrUndefined (NullableLong) }) -> DataRetrievalRule
+newDataRetrievalRule' :: ({ "Strategy" :: Maybe (String), "BytesPerHour" :: Maybe (NullableLong) } -> { "Strategy" :: Maybe (String), "BytesPerHour" :: Maybe (NullableLong) }) -> DataRetrievalRule
 ```
 
 Constructs DataRetrievalRule's fields from required parameters
@@ -702,7 +702,7 @@ Constructs DescribeVaultInput's fields from required parameters
 
 ``` purescript
 newtype DescribeVaultOutput
-  = DescribeVaultOutput { "VaultARN" :: NullOrUndefined (String), "VaultName" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String), "LastInventoryDate" :: NullOrUndefined (String), "NumberOfArchives" :: NullOrUndefined (Number), "SizeInBytes" :: NullOrUndefined (Number) }
+  = DescribeVaultOutput { "VaultARN" :: Maybe (String), "VaultName" :: Maybe (String), "CreationDate" :: Maybe (String), "LastInventoryDate" :: Maybe (String), "NumberOfArchives" :: Maybe (Number), "SizeInBytes" :: Maybe (Number) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -727,7 +727,7 @@ Constructs DescribeVaultOutput from required parameters
 #### `newDescribeVaultOutput'`
 
 ``` purescript
-newDescribeVaultOutput' :: ({ "VaultARN" :: NullOrUndefined (String), "VaultName" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String), "LastInventoryDate" :: NullOrUndefined (String), "NumberOfArchives" :: NullOrUndefined (Number), "SizeInBytes" :: NullOrUndefined (Number) } -> { "VaultARN" :: NullOrUndefined (String), "VaultName" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String), "LastInventoryDate" :: NullOrUndefined (String), "NumberOfArchives" :: NullOrUndefined (Number), "SizeInBytes" :: NullOrUndefined (Number) }) -> DescribeVaultOutput
+newDescribeVaultOutput' :: ({ "VaultARN" :: Maybe (String), "VaultName" :: Maybe (String), "CreationDate" :: Maybe (String), "LastInventoryDate" :: Maybe (String), "NumberOfArchives" :: Maybe (Number), "SizeInBytes" :: Maybe (Number) } -> { "VaultARN" :: Maybe (String), "VaultName" :: Maybe (String), "CreationDate" :: Maybe (String), "LastInventoryDate" :: Maybe (String), "NumberOfArchives" :: Maybe (Number), "SizeInBytes" :: Maybe (Number) }) -> DescribeVaultOutput
 ```
 
 Constructs DescribeVaultOutput's fields from required parameters
@@ -736,7 +736,7 @@ Constructs DescribeVaultOutput's fields from required parameters
 
 ``` purescript
 newtype Encryption
-  = Encryption { "EncryptionType" :: NullOrUndefined (EncryptionType), "KMSKeyId" :: NullOrUndefined (String), "KMSContext" :: NullOrUndefined (String) }
+  = Encryption { "EncryptionType" :: Maybe (EncryptionType), "KMSKeyId" :: Maybe (String), "KMSContext" :: Maybe (String) }
 ```
 
 <p>Contains information about the encryption used to store the job results in Amazon S3. </p>
@@ -761,7 +761,7 @@ Constructs Encryption from required parameters
 #### `newEncryption'`
 
 ``` purescript
-newEncryption' :: ({ "EncryptionType" :: NullOrUndefined (EncryptionType), "KMSKeyId" :: NullOrUndefined (String), "KMSContext" :: NullOrUndefined (String) } -> { "EncryptionType" :: NullOrUndefined (EncryptionType), "KMSKeyId" :: NullOrUndefined (String), "KMSContext" :: NullOrUndefined (String) }) -> Encryption
+newEncryption' :: ({ "EncryptionType" :: Maybe (EncryptionType), "KMSKeyId" :: Maybe (String), "KMSContext" :: Maybe (String) } -> { "EncryptionType" :: Maybe (EncryptionType), "KMSKeyId" :: Maybe (String), "KMSContext" :: Maybe (String) }) -> Encryption
 ```
 
 Constructs Encryption's fields from required parameters
@@ -852,7 +852,7 @@ Constructs GetDataRetrievalPolicyInput's fields from required parameters
 
 ``` purescript
 newtype GetDataRetrievalPolicyOutput
-  = GetDataRetrievalPolicyOutput { "Policy" :: NullOrUndefined (DataRetrievalPolicy) }
+  = GetDataRetrievalPolicyOutput { "Policy" :: Maybe (DataRetrievalPolicy) }
 ```
 
 <p>Contains the Amazon Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
@@ -877,7 +877,7 @@ Constructs GetDataRetrievalPolicyOutput from required parameters
 #### `newGetDataRetrievalPolicyOutput'`
 
 ``` purescript
-newGetDataRetrievalPolicyOutput' :: ({ "Policy" :: NullOrUndefined (DataRetrievalPolicy) } -> { "Policy" :: NullOrUndefined (DataRetrievalPolicy) }) -> GetDataRetrievalPolicyOutput
+newGetDataRetrievalPolicyOutput' :: ({ "Policy" :: Maybe (DataRetrievalPolicy) } -> { "Policy" :: Maybe (DataRetrievalPolicy) }) -> GetDataRetrievalPolicyOutput
 ```
 
 Constructs GetDataRetrievalPolicyOutput's fields from required parameters
@@ -886,7 +886,7 @@ Constructs GetDataRetrievalPolicyOutput's fields from required parameters
 
 ``` purescript
 newtype GetJobOutputInput
-  = GetJobOutputInput { accountId :: String, vaultName :: String, jobId :: String, range :: NullOrUndefined (String) }
+  = GetJobOutputInput { accountId :: String, vaultName :: String, jobId :: String, range :: Maybe (String) }
 ```
 
 <p>Provides options for downloading output of an Amazon Glacier job.</p>
@@ -911,7 +911,7 @@ Constructs GetJobOutputInput from required parameters
 #### `newGetJobOutputInput'`
 
 ``` purescript
-newGetJobOutputInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, jobId :: String, range :: NullOrUndefined (String) } -> { accountId :: String, vaultName :: String, jobId :: String, range :: NullOrUndefined (String) }) -> GetJobOutputInput
+newGetJobOutputInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, jobId :: String, range :: Maybe (String) } -> { accountId :: String, vaultName :: String, jobId :: String, range :: Maybe (String) }) -> GetJobOutputInput
 ```
 
 Constructs GetJobOutputInput's fields from required parameters
@@ -920,7 +920,7 @@ Constructs GetJobOutputInput's fields from required parameters
 
 ``` purescript
 newtype GetJobOutputOutput
-  = GetJobOutputOutput { body :: NullOrUndefined (Stream), checksum :: NullOrUndefined (String), status :: NullOrUndefined (Httpstatus'), contentRange :: NullOrUndefined (String), acceptRanges :: NullOrUndefined (String), contentType :: NullOrUndefined (String), archiveDescription :: NullOrUndefined (String) }
+  = GetJobOutputOutput { body :: Maybe (Stream), checksum :: Maybe (String), status :: Maybe (Httpstatus'), contentRange :: Maybe (String), acceptRanges :: Maybe (String), contentType :: Maybe (String), archiveDescription :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -945,7 +945,7 @@ Constructs GetJobOutputOutput from required parameters
 #### `newGetJobOutputOutput'`
 
 ``` purescript
-newGetJobOutputOutput' :: ({ body :: NullOrUndefined (Stream), checksum :: NullOrUndefined (String), status :: NullOrUndefined (Httpstatus'), contentRange :: NullOrUndefined (String), acceptRanges :: NullOrUndefined (String), contentType :: NullOrUndefined (String), archiveDescription :: NullOrUndefined (String) } -> { body :: NullOrUndefined (Stream), checksum :: NullOrUndefined (String), status :: NullOrUndefined (Httpstatus'), contentRange :: NullOrUndefined (String), acceptRanges :: NullOrUndefined (String), contentType :: NullOrUndefined (String), archiveDescription :: NullOrUndefined (String) }) -> GetJobOutputOutput
+newGetJobOutputOutput' :: ({ body :: Maybe (Stream), checksum :: Maybe (String), status :: Maybe (Httpstatus'), contentRange :: Maybe (String), acceptRanges :: Maybe (String), contentType :: Maybe (String), archiveDescription :: Maybe (String) } -> { body :: Maybe (Stream), checksum :: Maybe (String), status :: Maybe (Httpstatus'), contentRange :: Maybe (String), acceptRanges :: Maybe (String), contentType :: Maybe (String), archiveDescription :: Maybe (String) }) -> GetJobOutputOutput
 ```
 
 Constructs GetJobOutputOutput's fields from required parameters
@@ -988,7 +988,7 @@ Constructs GetVaultAccessPolicyInput's fields from required parameters
 
 ``` purescript
 newtype GetVaultAccessPolicyOutput
-  = GetVaultAccessPolicyOutput { policy :: NullOrUndefined (VaultAccessPolicy) }
+  = GetVaultAccessPolicyOutput { policy :: Maybe (VaultAccessPolicy) }
 ```
 
 <p>Output for GetVaultAccessPolicy.</p>
@@ -1013,7 +1013,7 @@ Constructs GetVaultAccessPolicyOutput from required parameters
 #### `newGetVaultAccessPolicyOutput'`
 
 ``` purescript
-newGetVaultAccessPolicyOutput' :: ({ policy :: NullOrUndefined (VaultAccessPolicy) } -> { policy :: NullOrUndefined (VaultAccessPolicy) }) -> GetVaultAccessPolicyOutput
+newGetVaultAccessPolicyOutput' :: ({ policy :: Maybe (VaultAccessPolicy) } -> { policy :: Maybe (VaultAccessPolicy) }) -> GetVaultAccessPolicyOutput
 ```
 
 Constructs GetVaultAccessPolicyOutput's fields from required parameters
@@ -1056,7 +1056,7 @@ Constructs GetVaultLockInput's fields from required parameters
 
 ``` purescript
 newtype GetVaultLockOutput
-  = GetVaultLockOutput { "Policy" :: NullOrUndefined (String), "State" :: NullOrUndefined (String), "ExpirationDate" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String) }
+  = GetVaultLockOutput { "Policy" :: Maybe (String), "State" :: Maybe (String), "ExpirationDate" :: Maybe (String), "CreationDate" :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1081,7 +1081,7 @@ Constructs GetVaultLockOutput from required parameters
 #### `newGetVaultLockOutput'`
 
 ``` purescript
-newGetVaultLockOutput' :: ({ "Policy" :: NullOrUndefined (String), "State" :: NullOrUndefined (String), "ExpirationDate" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String) } -> { "Policy" :: NullOrUndefined (String), "State" :: NullOrUndefined (String), "ExpirationDate" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String) }) -> GetVaultLockOutput
+newGetVaultLockOutput' :: ({ "Policy" :: Maybe (String), "State" :: Maybe (String), "ExpirationDate" :: Maybe (String), "CreationDate" :: Maybe (String) } -> { "Policy" :: Maybe (String), "State" :: Maybe (String), "ExpirationDate" :: Maybe (String), "CreationDate" :: Maybe (String) }) -> GetVaultLockOutput
 ```
 
 Constructs GetVaultLockOutput's fields from required parameters
@@ -1124,7 +1124,7 @@ Constructs GetVaultNotificationsInput's fields from required parameters
 
 ``` purescript
 newtype GetVaultNotificationsOutput
-  = GetVaultNotificationsOutput { vaultNotificationConfig :: NullOrUndefined (VaultNotificationConfig) }
+  = GetVaultNotificationsOutput { vaultNotificationConfig :: Maybe (VaultNotificationConfig) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1149,7 +1149,7 @@ Constructs GetVaultNotificationsOutput from required parameters
 #### `newGetVaultNotificationsOutput'`
 
 ``` purescript
-newGetVaultNotificationsOutput' :: ({ vaultNotificationConfig :: NullOrUndefined (VaultNotificationConfig) } -> { vaultNotificationConfig :: NullOrUndefined (VaultNotificationConfig) }) -> GetVaultNotificationsOutput
+newGetVaultNotificationsOutput' :: ({ vaultNotificationConfig :: Maybe (VaultNotificationConfig) } -> { vaultNotificationConfig :: Maybe (VaultNotificationConfig) }) -> GetVaultNotificationsOutput
 ```
 
 Constructs GetVaultNotificationsOutput's fields from required parameters
@@ -1158,7 +1158,7 @@ Constructs GetVaultNotificationsOutput's fields from required parameters
 
 ``` purescript
 newtype GlacierJobDescription
-  = GlacierJobDescription { "JobId" :: NullOrUndefined (String), "JobDescription" :: NullOrUndefined (String), "Action" :: NullOrUndefined (ActionCode), "ArchiveId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String), "Completed" :: NullOrUndefined (Boolean), "StatusCode" :: NullOrUndefined (StatusCode), "StatusMessage" :: NullOrUndefined (String), "ArchiveSizeInBytes" :: NullOrUndefined (Size), "InventorySizeInBytes" :: NullOrUndefined (Size), "SNSTopic" :: NullOrUndefined (String), "CompletionDate" :: NullOrUndefined (String), "SHA256TreeHash" :: NullOrUndefined (String), "ArchiveSHA256TreeHash" :: NullOrUndefined (String), "RetrievalByteRange" :: NullOrUndefined (String), "Tier" :: NullOrUndefined (String), "InventoryRetrievalParameters" :: NullOrUndefined (InventoryRetrievalJobDescription), "JobOutputPath" :: NullOrUndefined (String), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) }
+  = GlacierJobDescription { "JobId" :: Maybe (String), "JobDescription" :: Maybe (String), "Action" :: Maybe (ActionCode), "ArchiveId" :: Maybe (String), "VaultARN" :: Maybe (String), "CreationDate" :: Maybe (String), "Completed" :: Maybe (Boolean), "StatusCode" :: Maybe (StatusCode), "StatusMessage" :: Maybe (String), "ArchiveSizeInBytes" :: Maybe (Size), "InventorySizeInBytes" :: Maybe (Size), "SNSTopic" :: Maybe (String), "CompletionDate" :: Maybe (String), "SHA256TreeHash" :: Maybe (String), "ArchiveSHA256TreeHash" :: Maybe (String), "RetrievalByteRange" :: Maybe (String), "Tier" :: Maybe (String), "InventoryRetrievalParameters" :: Maybe (InventoryRetrievalJobDescription), "JobOutputPath" :: Maybe (String), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) }
 ```
 
 <p>Contains the description of an Amazon Glacier job.</p>
@@ -1183,7 +1183,7 @@ Constructs GlacierJobDescription from required parameters
 #### `newGlacierJobDescription'`
 
 ``` purescript
-newGlacierJobDescription' :: ({ "JobId" :: NullOrUndefined (String), "JobDescription" :: NullOrUndefined (String), "Action" :: NullOrUndefined (ActionCode), "ArchiveId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String), "Completed" :: NullOrUndefined (Boolean), "StatusCode" :: NullOrUndefined (StatusCode), "StatusMessage" :: NullOrUndefined (String), "ArchiveSizeInBytes" :: NullOrUndefined (Size), "InventorySizeInBytes" :: NullOrUndefined (Size), "SNSTopic" :: NullOrUndefined (String), "CompletionDate" :: NullOrUndefined (String), "SHA256TreeHash" :: NullOrUndefined (String), "ArchiveSHA256TreeHash" :: NullOrUndefined (String), "RetrievalByteRange" :: NullOrUndefined (String), "Tier" :: NullOrUndefined (String), "InventoryRetrievalParameters" :: NullOrUndefined (InventoryRetrievalJobDescription), "JobOutputPath" :: NullOrUndefined (String), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) } -> { "JobId" :: NullOrUndefined (String), "JobDescription" :: NullOrUndefined (String), "Action" :: NullOrUndefined (ActionCode), "ArchiveId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "CreationDate" :: NullOrUndefined (String), "Completed" :: NullOrUndefined (Boolean), "StatusCode" :: NullOrUndefined (StatusCode), "StatusMessage" :: NullOrUndefined (String), "ArchiveSizeInBytes" :: NullOrUndefined (Size), "InventorySizeInBytes" :: NullOrUndefined (Size), "SNSTopic" :: NullOrUndefined (String), "CompletionDate" :: NullOrUndefined (String), "SHA256TreeHash" :: NullOrUndefined (String), "ArchiveSHA256TreeHash" :: NullOrUndefined (String), "RetrievalByteRange" :: NullOrUndefined (String), "Tier" :: NullOrUndefined (String), "InventoryRetrievalParameters" :: NullOrUndefined (InventoryRetrievalJobDescription), "JobOutputPath" :: NullOrUndefined (String), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) }) -> GlacierJobDescription
+newGlacierJobDescription' :: ({ "JobId" :: Maybe (String), "JobDescription" :: Maybe (String), "Action" :: Maybe (ActionCode), "ArchiveId" :: Maybe (String), "VaultARN" :: Maybe (String), "CreationDate" :: Maybe (String), "Completed" :: Maybe (Boolean), "StatusCode" :: Maybe (StatusCode), "StatusMessage" :: Maybe (String), "ArchiveSizeInBytes" :: Maybe (Size), "InventorySizeInBytes" :: Maybe (Size), "SNSTopic" :: Maybe (String), "CompletionDate" :: Maybe (String), "SHA256TreeHash" :: Maybe (String), "ArchiveSHA256TreeHash" :: Maybe (String), "RetrievalByteRange" :: Maybe (String), "Tier" :: Maybe (String), "InventoryRetrievalParameters" :: Maybe (InventoryRetrievalJobDescription), "JobOutputPath" :: Maybe (String), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) } -> { "JobId" :: Maybe (String), "JobDescription" :: Maybe (String), "Action" :: Maybe (ActionCode), "ArchiveId" :: Maybe (String), "VaultARN" :: Maybe (String), "CreationDate" :: Maybe (String), "Completed" :: Maybe (Boolean), "StatusCode" :: Maybe (StatusCode), "StatusMessage" :: Maybe (String), "ArchiveSizeInBytes" :: Maybe (Size), "InventorySizeInBytes" :: Maybe (Size), "SNSTopic" :: Maybe (String), "CompletionDate" :: Maybe (String), "SHA256TreeHash" :: Maybe (String), "ArchiveSHA256TreeHash" :: Maybe (String), "RetrievalByteRange" :: Maybe (String), "Tier" :: Maybe (String), "InventoryRetrievalParameters" :: Maybe (InventoryRetrievalJobDescription), "JobOutputPath" :: Maybe (String), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) }) -> GlacierJobDescription
 ```
 
 Constructs GlacierJobDescription's fields from required parameters
@@ -1192,7 +1192,7 @@ Constructs GlacierJobDescription's fields from required parameters
 
 ``` purescript
 newtype Grant
-  = Grant { "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (Permission) }
+  = Grant { "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (Permission) }
 ```
 
 <p>Contains information about a grant.</p>
@@ -1217,7 +1217,7 @@ Constructs Grant from required parameters
 #### `newGrant'`
 
 ``` purescript
-newGrant' :: ({ "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (Permission) } -> { "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (Permission) }) -> Grant
+newGrant' :: ({ "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (Permission) } -> { "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (Permission) }) -> Grant
 ```
 
 Constructs Grant's fields from required parameters
@@ -1226,7 +1226,7 @@ Constructs Grant's fields from required parameters
 
 ``` purescript
 newtype Grantee
-  = Grantee { "Type" :: Type, "DisplayName" :: NullOrUndefined (String), "URI" :: NullOrUndefined (String), "ID" :: NullOrUndefined (String), "EmailAddress" :: NullOrUndefined (String) }
+  = Grantee { "Type" :: Type, "DisplayName" :: Maybe (String), "URI" :: Maybe (String), "ID" :: Maybe (String), "EmailAddress" :: Maybe (String) }
 ```
 
 <p>Contains information about the grantee.</p>
@@ -1251,7 +1251,7 @@ Constructs Grantee from required parameters
 #### `newGrantee'`
 
 ``` purescript
-newGrantee' :: Type -> ({ "Type" :: Type, "DisplayName" :: NullOrUndefined (String), "URI" :: NullOrUndefined (String), "ID" :: NullOrUndefined (String), "EmailAddress" :: NullOrUndefined (String) } -> { "Type" :: Type, "DisplayName" :: NullOrUndefined (String), "URI" :: NullOrUndefined (String), "ID" :: NullOrUndefined (String), "EmailAddress" :: NullOrUndefined (String) }) -> Grantee
+newGrantee' :: Type -> ({ "Type" :: Type, "DisplayName" :: Maybe (String), "URI" :: Maybe (String), "ID" :: Maybe (String), "EmailAddress" :: Maybe (String) } -> { "Type" :: Type, "DisplayName" :: Maybe (String), "URI" :: Maybe (String), "ID" :: Maybe (String), "EmailAddress" :: Maybe (String) }) -> Grantee
 ```
 
 Constructs Grantee's fields from required parameters
@@ -1260,7 +1260,7 @@ Constructs Grantee's fields from required parameters
 
 ``` purescript
 newtype InitiateJobInput
-  = InitiateJobInput { accountId :: String, vaultName :: String, jobParameters :: NullOrUndefined (JobParameters) }
+  = InitiateJobInput { accountId :: String, vaultName :: String, jobParameters :: Maybe (JobParameters) }
 ```
 
 <p>Provides options for initiating an Amazon Glacier job.</p>
@@ -1285,7 +1285,7 @@ Constructs InitiateJobInput from required parameters
 #### `newInitiateJobInput'`
 
 ``` purescript
-newInitiateJobInput' :: String -> String -> ({ accountId :: String, vaultName :: String, jobParameters :: NullOrUndefined (JobParameters) } -> { accountId :: String, vaultName :: String, jobParameters :: NullOrUndefined (JobParameters) }) -> InitiateJobInput
+newInitiateJobInput' :: String -> String -> ({ accountId :: String, vaultName :: String, jobParameters :: Maybe (JobParameters) } -> { accountId :: String, vaultName :: String, jobParameters :: Maybe (JobParameters) }) -> InitiateJobInput
 ```
 
 Constructs InitiateJobInput's fields from required parameters
@@ -1294,7 +1294,7 @@ Constructs InitiateJobInput's fields from required parameters
 
 ``` purescript
 newtype InitiateJobOutput
-  = InitiateJobOutput { location :: NullOrUndefined (String), jobId :: NullOrUndefined (String), jobOutputPath :: NullOrUndefined (String) }
+  = InitiateJobOutput { location :: Maybe (String), jobId :: Maybe (String), jobOutputPath :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1319,7 +1319,7 @@ Constructs InitiateJobOutput from required parameters
 #### `newInitiateJobOutput'`
 
 ``` purescript
-newInitiateJobOutput' :: ({ location :: NullOrUndefined (String), jobId :: NullOrUndefined (String), jobOutputPath :: NullOrUndefined (String) } -> { location :: NullOrUndefined (String), jobId :: NullOrUndefined (String), jobOutputPath :: NullOrUndefined (String) }) -> InitiateJobOutput
+newInitiateJobOutput' :: ({ location :: Maybe (String), jobId :: Maybe (String), jobOutputPath :: Maybe (String) } -> { location :: Maybe (String), jobId :: Maybe (String), jobOutputPath :: Maybe (String) }) -> InitiateJobOutput
 ```
 
 Constructs InitiateJobOutput's fields from required parameters
@@ -1328,7 +1328,7 @@ Constructs InitiateJobOutput's fields from required parameters
 
 ``` purescript
 newtype InitiateMultipartUploadInput
-  = InitiateMultipartUploadInput { accountId :: String, vaultName :: String, archiveDescription :: NullOrUndefined (String), partSize :: NullOrUndefined (String) }
+  = InitiateMultipartUploadInput { accountId :: String, vaultName :: String, archiveDescription :: Maybe (String), partSize :: Maybe (String) }
 ```
 
 <p>Provides options for initiating a multipart upload to an Amazon Glacier vault.</p>
@@ -1353,7 +1353,7 @@ Constructs InitiateMultipartUploadInput from required parameters
 #### `newInitiateMultipartUploadInput'`
 
 ``` purescript
-newInitiateMultipartUploadInput' :: String -> String -> ({ accountId :: String, vaultName :: String, archiveDescription :: NullOrUndefined (String), partSize :: NullOrUndefined (String) } -> { accountId :: String, vaultName :: String, archiveDescription :: NullOrUndefined (String), partSize :: NullOrUndefined (String) }) -> InitiateMultipartUploadInput
+newInitiateMultipartUploadInput' :: String -> String -> ({ accountId :: String, vaultName :: String, archiveDescription :: Maybe (String), partSize :: Maybe (String) } -> { accountId :: String, vaultName :: String, archiveDescription :: Maybe (String), partSize :: Maybe (String) }) -> InitiateMultipartUploadInput
 ```
 
 Constructs InitiateMultipartUploadInput's fields from required parameters
@@ -1362,7 +1362,7 @@ Constructs InitiateMultipartUploadInput's fields from required parameters
 
 ``` purescript
 newtype InitiateMultipartUploadOutput
-  = InitiateMultipartUploadOutput { location :: NullOrUndefined (String), uploadId :: NullOrUndefined (String) }
+  = InitiateMultipartUploadOutput { location :: Maybe (String), uploadId :: Maybe (String) }
 ```
 
 <p>The Amazon Glacier response to your request.</p>
@@ -1387,7 +1387,7 @@ Constructs InitiateMultipartUploadOutput from required parameters
 #### `newInitiateMultipartUploadOutput'`
 
 ``` purescript
-newInitiateMultipartUploadOutput' :: ({ location :: NullOrUndefined (String), uploadId :: NullOrUndefined (String) } -> { location :: NullOrUndefined (String), uploadId :: NullOrUndefined (String) }) -> InitiateMultipartUploadOutput
+newInitiateMultipartUploadOutput' :: ({ location :: Maybe (String), uploadId :: Maybe (String) } -> { location :: Maybe (String), uploadId :: Maybe (String) }) -> InitiateMultipartUploadOutput
 ```
 
 Constructs InitiateMultipartUploadOutput's fields from required parameters
@@ -1396,7 +1396,7 @@ Constructs InitiateMultipartUploadOutput's fields from required parameters
 
 ``` purescript
 newtype InitiateVaultLockInput
-  = InitiateVaultLockInput { accountId :: String, vaultName :: String, policy :: NullOrUndefined (VaultLockPolicy) }
+  = InitiateVaultLockInput { accountId :: String, vaultName :: String, policy :: Maybe (VaultLockPolicy) }
 ```
 
 <p>The input values for <code>InitiateVaultLock</code>.</p>
@@ -1421,7 +1421,7 @@ Constructs InitiateVaultLockInput from required parameters
 #### `newInitiateVaultLockInput'`
 
 ``` purescript
-newInitiateVaultLockInput' :: String -> String -> ({ accountId :: String, vaultName :: String, policy :: NullOrUndefined (VaultLockPolicy) } -> { accountId :: String, vaultName :: String, policy :: NullOrUndefined (VaultLockPolicy) }) -> InitiateVaultLockInput
+newInitiateVaultLockInput' :: String -> String -> ({ accountId :: String, vaultName :: String, policy :: Maybe (VaultLockPolicy) } -> { accountId :: String, vaultName :: String, policy :: Maybe (VaultLockPolicy) }) -> InitiateVaultLockInput
 ```
 
 Constructs InitiateVaultLockInput's fields from required parameters
@@ -1430,7 +1430,7 @@ Constructs InitiateVaultLockInput's fields from required parameters
 
 ``` purescript
 newtype InitiateVaultLockOutput
-  = InitiateVaultLockOutput { lockId :: NullOrUndefined (String) }
+  = InitiateVaultLockOutput { lockId :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1455,7 +1455,7 @@ Constructs InitiateVaultLockOutput from required parameters
 #### `newInitiateVaultLockOutput'`
 
 ``` purescript
-newInitiateVaultLockOutput' :: ({ lockId :: NullOrUndefined (String) } -> { lockId :: NullOrUndefined (String) }) -> InitiateVaultLockOutput
+newInitiateVaultLockOutput' :: ({ lockId :: Maybe (String) } -> { lockId :: Maybe (String) }) -> InitiateVaultLockOutput
 ```
 
 Constructs InitiateVaultLockOutput's fields from required parameters
@@ -1464,7 +1464,7 @@ Constructs InitiateVaultLockOutput's fields from required parameters
 
 ``` purescript
 newtype InputSerialization
-  = InputSerialization { csv :: NullOrUndefined (CSVInput) }
+  = InputSerialization { csv :: Maybe (CSVInput) }
 ```
 
 <p>Describes how the archive is serialized.</p>
@@ -1489,7 +1489,7 @@ Constructs InputSerialization from required parameters
 #### `newInputSerialization'`
 
 ``` purescript
-newInputSerialization' :: ({ csv :: NullOrUndefined (CSVInput) } -> { csv :: NullOrUndefined (CSVInput) }) -> InputSerialization
+newInputSerialization' :: ({ csv :: Maybe (CSVInput) } -> { csv :: Maybe (CSVInput) }) -> InputSerialization
 ```
 
 Constructs InputSerialization's fields from required parameters
@@ -1498,7 +1498,7 @@ Constructs InputSerialization's fields from required parameters
 
 ``` purescript
 newtype InsufficientCapacityException
-  = InsufficientCapacityException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = InsufficientCapacityException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
@@ -1523,7 +1523,7 @@ Constructs InsufficientCapacityException from required parameters
 #### `newInsufficientCapacityException'`
 
 ``` purescript
-newInsufficientCapacityException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> InsufficientCapacityException
+newInsufficientCapacityException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> InsufficientCapacityException
 ```
 
 Constructs InsufficientCapacityException's fields from required parameters
@@ -1532,7 +1532,7 @@ Constructs InsufficientCapacityException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterValueException
-  = InvalidParameterValueException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = InvalidParameterValueException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if a parameter of the request is incorrectly specified.</p>
@@ -1557,7 +1557,7 @@ Constructs InvalidParameterValueException from required parameters
 #### `newInvalidParameterValueException'`
 
 ``` purescript
-newInvalidParameterValueException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> InvalidParameterValueException
+newInvalidParameterValueException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> InvalidParameterValueException
 ```
 
 Constructs InvalidParameterValueException's fields from required parameters
@@ -1566,7 +1566,7 @@ Constructs InvalidParameterValueException's fields from required parameters
 
 ``` purescript
 newtype InventoryRetrievalJobDescription
-  = InventoryRetrievalJobDescription { "Format" :: NullOrUndefined (String), "StartDate" :: NullOrUndefined (DateTime), "EndDate" :: NullOrUndefined (DateTime), "Limit" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String) }
+  = InventoryRetrievalJobDescription { "Format" :: Maybe (String), "StartDate" :: Maybe (DateTime), "EndDate" :: Maybe (DateTime), "Limit" :: Maybe (String), "Marker" :: Maybe (String) }
 ```
 
 <p>Describes the options for a range inventory retrieval job.</p>
@@ -1591,7 +1591,7 @@ Constructs InventoryRetrievalJobDescription from required parameters
 #### `newInventoryRetrievalJobDescription'`
 
 ``` purescript
-newInventoryRetrievalJobDescription' :: ({ "Format" :: NullOrUndefined (String), "StartDate" :: NullOrUndefined (DateTime), "EndDate" :: NullOrUndefined (DateTime), "Limit" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String) } -> { "Format" :: NullOrUndefined (String), "StartDate" :: NullOrUndefined (DateTime), "EndDate" :: NullOrUndefined (DateTime), "Limit" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String) }) -> InventoryRetrievalJobDescription
+newInventoryRetrievalJobDescription' :: ({ "Format" :: Maybe (String), "StartDate" :: Maybe (DateTime), "EndDate" :: Maybe (DateTime), "Limit" :: Maybe (String), "Marker" :: Maybe (String) } -> { "Format" :: Maybe (String), "StartDate" :: Maybe (DateTime), "EndDate" :: Maybe (DateTime), "Limit" :: Maybe (String), "Marker" :: Maybe (String) }) -> InventoryRetrievalJobDescription
 ```
 
 Constructs InventoryRetrievalJobDescription's fields from required parameters
@@ -1600,7 +1600,7 @@ Constructs InventoryRetrievalJobDescription's fields from required parameters
 
 ``` purescript
 newtype InventoryRetrievalJobInput
-  = InventoryRetrievalJobInput { "StartDate" :: NullOrUndefined (String), "EndDate" :: NullOrUndefined (String), "Limit" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String) }
+  = InventoryRetrievalJobInput { "StartDate" :: Maybe (String), "EndDate" :: Maybe (String), "Limit" :: Maybe (String), "Marker" :: Maybe (String) }
 ```
 
 <p>Provides options for specifying a range inventory retrieval job.</p>
@@ -1625,7 +1625,7 @@ Constructs InventoryRetrievalJobInput from required parameters
 #### `newInventoryRetrievalJobInput'`
 
 ``` purescript
-newInventoryRetrievalJobInput' :: ({ "StartDate" :: NullOrUndefined (String), "EndDate" :: NullOrUndefined (String), "Limit" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String) } -> { "StartDate" :: NullOrUndefined (String), "EndDate" :: NullOrUndefined (String), "Limit" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String) }) -> InventoryRetrievalJobInput
+newInventoryRetrievalJobInput' :: ({ "StartDate" :: Maybe (String), "EndDate" :: Maybe (String), "Limit" :: Maybe (String), "Marker" :: Maybe (String) } -> { "StartDate" :: Maybe (String), "EndDate" :: Maybe (String), "Limit" :: Maybe (String), "Marker" :: Maybe (String) }) -> InventoryRetrievalJobInput
 ```
 
 Constructs InventoryRetrievalJobInput's fields from required parameters
@@ -1650,7 +1650,7 @@ Encode JobList
 
 ``` purescript
 newtype JobParameters
-  = JobParameters { "Format" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "ArchiveId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "SNSTopic" :: NullOrUndefined (String), "RetrievalByteRange" :: NullOrUndefined (String), "Tier" :: NullOrUndefined (String), "InventoryRetrievalParameters" :: NullOrUndefined (InventoryRetrievalJobInput), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) }
+  = JobParameters { "Format" :: Maybe (String), "Type" :: Maybe (String), "ArchiveId" :: Maybe (String), "Description" :: Maybe (String), "SNSTopic" :: Maybe (String), "RetrievalByteRange" :: Maybe (String), "Tier" :: Maybe (String), "InventoryRetrievalParameters" :: Maybe (InventoryRetrievalJobInput), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) }
 ```
 
 <p>Provides options for defining a job.</p>
@@ -1675,7 +1675,7 @@ Constructs JobParameters from required parameters
 #### `newJobParameters'`
 
 ``` purescript
-newJobParameters' :: ({ "Format" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "ArchiveId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "SNSTopic" :: NullOrUndefined (String), "RetrievalByteRange" :: NullOrUndefined (String), "Tier" :: NullOrUndefined (String), "InventoryRetrievalParameters" :: NullOrUndefined (InventoryRetrievalJobInput), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) } -> { "Format" :: NullOrUndefined (String), "Type" :: NullOrUndefined (String), "ArchiveId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "SNSTopic" :: NullOrUndefined (String), "RetrievalByteRange" :: NullOrUndefined (String), "Tier" :: NullOrUndefined (String), "InventoryRetrievalParameters" :: NullOrUndefined (InventoryRetrievalJobInput), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) }) -> JobParameters
+newJobParameters' :: ({ "Format" :: Maybe (String), "Type" :: Maybe (String), "ArchiveId" :: Maybe (String), "Description" :: Maybe (String), "SNSTopic" :: Maybe (String), "RetrievalByteRange" :: Maybe (String), "Tier" :: Maybe (String), "InventoryRetrievalParameters" :: Maybe (InventoryRetrievalJobInput), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) } -> { "Format" :: Maybe (String), "Type" :: Maybe (String), "ArchiveId" :: Maybe (String), "Description" :: Maybe (String), "SNSTopic" :: Maybe (String), "RetrievalByteRange" :: Maybe (String), "Tier" :: Maybe (String), "InventoryRetrievalParameters" :: Maybe (InventoryRetrievalJobInput), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) }) -> JobParameters
 ```
 
 Constructs JobParameters's fields from required parameters
@@ -1684,7 +1684,7 @@ Constructs JobParameters's fields from required parameters
 
 ``` purescript
 newtype LimitExceededException
-  = LimitExceededException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = LimitExceededException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if the request results in a vault or account limit being exceeded.</p>
@@ -1709,7 +1709,7 @@ Constructs LimitExceededException from required parameters
 #### `newLimitExceededException'`
 
 ``` purescript
-newLimitExceededException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> LimitExceededException
+newLimitExceededException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> LimitExceededException
 ```
 
 Constructs LimitExceededException's fields from required parameters
@@ -1718,7 +1718,7 @@ Constructs LimitExceededException's fields from required parameters
 
 ``` purescript
 newtype ListJobsInput
-  = ListJobsInput { accountId :: String, vaultName :: String, limit :: NullOrUndefined (String), marker :: NullOrUndefined (String), statuscode :: NullOrUndefined (String), completed :: NullOrUndefined (String) }
+  = ListJobsInput { accountId :: String, vaultName :: String, limit :: Maybe (String), marker :: Maybe (String), statuscode :: Maybe (String), completed :: Maybe (String) }
 ```
 
 <p>Provides options for retrieving a job list for an Amazon Glacier vault.</p>
@@ -1743,7 +1743,7 @@ Constructs ListJobsInput from required parameters
 #### `newListJobsInput'`
 
 ``` purescript
-newListJobsInput' :: String -> String -> ({ accountId :: String, vaultName :: String, limit :: NullOrUndefined (String), marker :: NullOrUndefined (String), statuscode :: NullOrUndefined (String), completed :: NullOrUndefined (String) } -> { accountId :: String, vaultName :: String, limit :: NullOrUndefined (String), marker :: NullOrUndefined (String), statuscode :: NullOrUndefined (String), completed :: NullOrUndefined (String) }) -> ListJobsInput
+newListJobsInput' :: String -> String -> ({ accountId :: String, vaultName :: String, limit :: Maybe (String), marker :: Maybe (String), statuscode :: Maybe (String), completed :: Maybe (String) } -> { accountId :: String, vaultName :: String, limit :: Maybe (String), marker :: Maybe (String), statuscode :: Maybe (String), completed :: Maybe (String) }) -> ListJobsInput
 ```
 
 Constructs ListJobsInput's fields from required parameters
@@ -1752,7 +1752,7 @@ Constructs ListJobsInput's fields from required parameters
 
 ``` purescript
 newtype ListJobsOutput
-  = ListJobsOutput { "JobList" :: NullOrUndefined (JobList), "Marker" :: NullOrUndefined (String) }
+  = ListJobsOutput { "JobList" :: Maybe (JobList), "Marker" :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1777,7 +1777,7 @@ Constructs ListJobsOutput from required parameters
 #### `newListJobsOutput'`
 
 ``` purescript
-newListJobsOutput' :: ({ "JobList" :: NullOrUndefined (JobList), "Marker" :: NullOrUndefined (String) } -> { "JobList" :: NullOrUndefined (JobList), "Marker" :: NullOrUndefined (String) }) -> ListJobsOutput
+newListJobsOutput' :: ({ "JobList" :: Maybe (JobList), "Marker" :: Maybe (String) } -> { "JobList" :: Maybe (JobList), "Marker" :: Maybe (String) }) -> ListJobsOutput
 ```
 
 Constructs ListJobsOutput's fields from required parameters
@@ -1786,7 +1786,7 @@ Constructs ListJobsOutput's fields from required parameters
 
 ``` purescript
 newtype ListMultipartUploadsInput
-  = ListMultipartUploadsInput { accountId :: String, vaultName :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) }
+  = ListMultipartUploadsInput { accountId :: String, vaultName :: String, marker :: Maybe (String), limit :: Maybe (String) }
 ```
 
 <p>Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault.</p>
@@ -1811,7 +1811,7 @@ Constructs ListMultipartUploadsInput from required parameters
 #### `newListMultipartUploadsInput'`
 
 ``` purescript
-newListMultipartUploadsInput' :: String -> String -> ({ accountId :: String, vaultName :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) } -> { accountId :: String, vaultName :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) }) -> ListMultipartUploadsInput
+newListMultipartUploadsInput' :: String -> String -> ({ accountId :: String, vaultName :: String, marker :: Maybe (String), limit :: Maybe (String) } -> { accountId :: String, vaultName :: String, marker :: Maybe (String), limit :: Maybe (String) }) -> ListMultipartUploadsInput
 ```
 
 Constructs ListMultipartUploadsInput's fields from required parameters
@@ -1820,7 +1820,7 @@ Constructs ListMultipartUploadsInput's fields from required parameters
 
 ``` purescript
 newtype ListMultipartUploadsOutput
-  = ListMultipartUploadsOutput { "UploadsList" :: NullOrUndefined (UploadsList), "Marker" :: NullOrUndefined (String) }
+  = ListMultipartUploadsOutput { "UploadsList" :: Maybe (UploadsList), "Marker" :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1845,7 +1845,7 @@ Constructs ListMultipartUploadsOutput from required parameters
 #### `newListMultipartUploadsOutput'`
 
 ``` purescript
-newListMultipartUploadsOutput' :: ({ "UploadsList" :: NullOrUndefined (UploadsList), "Marker" :: NullOrUndefined (String) } -> { "UploadsList" :: NullOrUndefined (UploadsList), "Marker" :: NullOrUndefined (String) }) -> ListMultipartUploadsOutput
+newListMultipartUploadsOutput' :: ({ "UploadsList" :: Maybe (UploadsList), "Marker" :: Maybe (String) } -> { "UploadsList" :: Maybe (UploadsList), "Marker" :: Maybe (String) }) -> ListMultipartUploadsOutput
 ```
 
 Constructs ListMultipartUploadsOutput's fields from required parameters
@@ -1854,7 +1854,7 @@ Constructs ListMultipartUploadsOutput's fields from required parameters
 
 ``` purescript
 newtype ListPartsInput
-  = ListPartsInput { accountId :: String, vaultName :: String, uploadId :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) }
+  = ListPartsInput { accountId :: String, vaultName :: String, uploadId :: String, marker :: Maybe (String), limit :: Maybe (String) }
 ```
 
 <p>Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.</p>
@@ -1879,7 +1879,7 @@ Constructs ListPartsInput from required parameters
 #### `newListPartsInput'`
 
 ``` purescript
-newListPartsInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, uploadId :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) } -> { accountId :: String, vaultName :: String, uploadId :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) }) -> ListPartsInput
+newListPartsInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, uploadId :: String, marker :: Maybe (String), limit :: Maybe (String) } -> { accountId :: String, vaultName :: String, uploadId :: String, marker :: Maybe (String), limit :: Maybe (String) }) -> ListPartsInput
 ```
 
 Constructs ListPartsInput's fields from required parameters
@@ -1888,7 +1888,7 @@ Constructs ListPartsInput's fields from required parameters
 
 ``` purescript
 newtype ListPartsOutput
-  = ListPartsOutput { "MultipartUploadId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "ArchiveDescription" :: NullOrUndefined (String), "PartSizeInBytes" :: NullOrUndefined (Number), "CreationDate" :: NullOrUndefined (String), "Parts" :: NullOrUndefined (PartList), "Marker" :: NullOrUndefined (String) }
+  = ListPartsOutput { "MultipartUploadId" :: Maybe (String), "VaultARN" :: Maybe (String), "ArchiveDescription" :: Maybe (String), "PartSizeInBytes" :: Maybe (Number), "CreationDate" :: Maybe (String), "Parts" :: Maybe (PartList), "Marker" :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -1913,7 +1913,7 @@ Constructs ListPartsOutput from required parameters
 #### `newListPartsOutput'`
 
 ``` purescript
-newListPartsOutput' :: ({ "MultipartUploadId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "ArchiveDescription" :: NullOrUndefined (String), "PartSizeInBytes" :: NullOrUndefined (Number), "CreationDate" :: NullOrUndefined (String), "Parts" :: NullOrUndefined (PartList), "Marker" :: NullOrUndefined (String) } -> { "MultipartUploadId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "ArchiveDescription" :: NullOrUndefined (String), "PartSizeInBytes" :: NullOrUndefined (Number), "CreationDate" :: NullOrUndefined (String), "Parts" :: NullOrUndefined (PartList), "Marker" :: NullOrUndefined (String) }) -> ListPartsOutput
+newListPartsOutput' :: ({ "MultipartUploadId" :: Maybe (String), "VaultARN" :: Maybe (String), "ArchiveDescription" :: Maybe (String), "PartSizeInBytes" :: Maybe (Number), "CreationDate" :: Maybe (String), "Parts" :: Maybe (PartList), "Marker" :: Maybe (String) } -> { "MultipartUploadId" :: Maybe (String), "VaultARN" :: Maybe (String), "ArchiveDescription" :: Maybe (String), "PartSizeInBytes" :: Maybe (Number), "CreationDate" :: Maybe (String), "Parts" :: Maybe (PartList), "Marker" :: Maybe (String) }) -> ListPartsOutput
 ```
 
 Constructs ListPartsOutput's fields from required parameters
@@ -1954,7 +1954,7 @@ Constructs ListProvisionedCapacityInput's fields from required parameters
 
 ``` purescript
 newtype ListProvisionedCapacityOutput
-  = ListProvisionedCapacityOutput { "ProvisionedCapacityList" :: NullOrUndefined (ProvisionedCapacityList) }
+  = ListProvisionedCapacityOutput { "ProvisionedCapacityList" :: Maybe (ProvisionedCapacityList) }
 ```
 
 ##### Instances
@@ -1977,7 +1977,7 @@ Constructs ListProvisionedCapacityOutput from required parameters
 #### `newListProvisionedCapacityOutput'`
 
 ``` purescript
-newListProvisionedCapacityOutput' :: ({ "ProvisionedCapacityList" :: NullOrUndefined (ProvisionedCapacityList) } -> { "ProvisionedCapacityList" :: NullOrUndefined (ProvisionedCapacityList) }) -> ListProvisionedCapacityOutput
+newListProvisionedCapacityOutput' :: ({ "ProvisionedCapacityList" :: Maybe (ProvisionedCapacityList) } -> { "ProvisionedCapacityList" :: Maybe (ProvisionedCapacityList) }) -> ListProvisionedCapacityOutput
 ```
 
 Constructs ListProvisionedCapacityOutput's fields from required parameters
@@ -2020,7 +2020,7 @@ Constructs ListTagsForVaultInput's fields from required parameters
 
 ``` purescript
 newtype ListTagsForVaultOutput
-  = ListTagsForVaultOutput { "Tags" :: NullOrUndefined (TagMap) }
+  = ListTagsForVaultOutput { "Tags" :: Maybe (TagMap) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -2045,7 +2045,7 @@ Constructs ListTagsForVaultOutput from required parameters
 #### `newListTagsForVaultOutput'`
 
 ``` purescript
-newListTagsForVaultOutput' :: ({ "Tags" :: NullOrUndefined (TagMap) } -> { "Tags" :: NullOrUndefined (TagMap) }) -> ListTagsForVaultOutput
+newListTagsForVaultOutput' :: ({ "Tags" :: Maybe (TagMap) } -> { "Tags" :: Maybe (TagMap) }) -> ListTagsForVaultOutput
 ```
 
 Constructs ListTagsForVaultOutput's fields from required parameters
@@ -2054,7 +2054,7 @@ Constructs ListTagsForVaultOutput's fields from required parameters
 
 ``` purescript
 newtype ListVaultsInput
-  = ListVaultsInput { accountId :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) }
+  = ListVaultsInput { accountId :: String, marker :: Maybe (String), limit :: Maybe (String) }
 ```
 
 <p>Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.</p>
@@ -2079,7 +2079,7 @@ Constructs ListVaultsInput from required parameters
 #### `newListVaultsInput'`
 
 ``` purescript
-newListVaultsInput' :: String -> ({ accountId :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) } -> { accountId :: String, marker :: NullOrUndefined (String), limit :: NullOrUndefined (String) }) -> ListVaultsInput
+newListVaultsInput' :: String -> ({ accountId :: String, marker :: Maybe (String), limit :: Maybe (String) } -> { accountId :: String, marker :: Maybe (String), limit :: Maybe (String) }) -> ListVaultsInput
 ```
 
 Constructs ListVaultsInput's fields from required parameters
@@ -2088,7 +2088,7 @@ Constructs ListVaultsInput's fields from required parameters
 
 ``` purescript
 newtype ListVaultsOutput
-  = ListVaultsOutput { "VaultList" :: NullOrUndefined (VaultList), "Marker" :: NullOrUndefined (String) }
+  = ListVaultsOutput { "VaultList" :: Maybe (VaultList), "Marker" :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -2113,7 +2113,7 @@ Constructs ListVaultsOutput from required parameters
 #### `newListVaultsOutput'`
 
 ``` purescript
-newListVaultsOutput' :: ({ "VaultList" :: NullOrUndefined (VaultList), "Marker" :: NullOrUndefined (String) } -> { "VaultList" :: NullOrUndefined (VaultList), "Marker" :: NullOrUndefined (String) }) -> ListVaultsOutput
+newListVaultsOutput' :: ({ "VaultList" :: Maybe (VaultList), "Marker" :: Maybe (String) } -> { "VaultList" :: Maybe (VaultList), "Marker" :: Maybe (String) }) -> ListVaultsOutput
 ```
 
 Constructs ListVaultsOutput's fields from required parameters
@@ -2122,7 +2122,7 @@ Constructs ListVaultsOutput's fields from required parameters
 
 ``` purescript
 newtype MissingParameterValueException
-  = MissingParameterValueException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = MissingParameterValueException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if a required header or parameter is missing from the request.</p>
@@ -2147,7 +2147,7 @@ Constructs MissingParameterValueException from required parameters
 #### `newMissingParameterValueException'`
 
 ``` purescript
-newMissingParameterValueException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> MissingParameterValueException
+newMissingParameterValueException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> MissingParameterValueException
 ```
 
 Constructs MissingParameterValueException's fields from required parameters
@@ -2188,7 +2188,7 @@ Encode NullableLong
 
 ``` purescript
 newtype OutputLocation
-  = OutputLocation { "S3" :: NullOrUndefined (S3Location) }
+  = OutputLocation { "S3" :: Maybe (S3Location) }
 ```
 
 <p>Contains information about the location where the select job results are stored.</p>
@@ -2213,7 +2213,7 @@ Constructs OutputLocation from required parameters
 #### `newOutputLocation'`
 
 ``` purescript
-newOutputLocation' :: ({ "S3" :: NullOrUndefined (S3Location) } -> { "S3" :: NullOrUndefined (S3Location) }) -> OutputLocation
+newOutputLocation' :: ({ "S3" :: Maybe (S3Location) } -> { "S3" :: Maybe (S3Location) }) -> OutputLocation
 ```
 
 Constructs OutputLocation's fields from required parameters
@@ -2222,7 +2222,7 @@ Constructs OutputLocation's fields from required parameters
 
 ``` purescript
 newtype OutputSerialization
-  = OutputSerialization { csv :: NullOrUndefined (CSVOutput) }
+  = OutputSerialization { csv :: Maybe (CSVOutput) }
 ```
 
 <p>Describes how the select output is serialized.</p>
@@ -2247,7 +2247,7 @@ Constructs OutputSerialization from required parameters
 #### `newOutputSerialization'`
 
 ``` purescript
-newOutputSerialization' :: ({ csv :: NullOrUndefined (CSVOutput) } -> { csv :: NullOrUndefined (CSVOutput) }) -> OutputSerialization
+newOutputSerialization' :: ({ csv :: Maybe (CSVOutput) } -> { csv :: Maybe (CSVOutput) }) -> OutputSerialization
 ```
 
 Constructs OutputSerialization's fields from required parameters
@@ -2272,7 +2272,7 @@ Encode PartList
 
 ``` purescript
 newtype PartListElement
-  = PartListElement { "RangeInBytes" :: NullOrUndefined (String), "SHA256TreeHash" :: NullOrUndefined (String) }
+  = PartListElement { "RangeInBytes" :: Maybe (String), "SHA256TreeHash" :: Maybe (String) }
 ```
 
 <p>A list of the part sizes of the multipart upload.</p>
@@ -2297,7 +2297,7 @@ Constructs PartListElement from required parameters
 #### `newPartListElement'`
 
 ``` purescript
-newPartListElement' :: ({ "RangeInBytes" :: NullOrUndefined (String), "SHA256TreeHash" :: NullOrUndefined (String) } -> { "RangeInBytes" :: NullOrUndefined (String), "SHA256TreeHash" :: NullOrUndefined (String) }) -> PartListElement
+newPartListElement' :: ({ "RangeInBytes" :: Maybe (String), "SHA256TreeHash" :: Maybe (String) } -> { "RangeInBytes" :: Maybe (String), "SHA256TreeHash" :: Maybe (String) }) -> PartListElement
 ```
 
 Constructs PartListElement's fields from required parameters
@@ -2322,7 +2322,7 @@ Encode Permission
 
 ``` purescript
 newtype PolicyEnforcedException
-  = PolicyEnforcedException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = PolicyEnforcedException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
@@ -2347,7 +2347,7 @@ Constructs PolicyEnforcedException from required parameters
 #### `newPolicyEnforcedException'`
 
 ``` purescript
-newPolicyEnforcedException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> PolicyEnforcedException
+newPolicyEnforcedException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> PolicyEnforcedException
 ```
 
 Constructs PolicyEnforcedException's fields from required parameters
@@ -2356,7 +2356,7 @@ Constructs PolicyEnforcedException's fields from required parameters
 
 ``` purescript
 newtype ProvisionedCapacityDescription
-  = ProvisionedCapacityDescription { "CapacityId" :: NullOrUndefined (String), "StartDate" :: NullOrUndefined (String), "ExpirationDate" :: NullOrUndefined (String) }
+  = ProvisionedCapacityDescription { "CapacityId" :: Maybe (String), "StartDate" :: Maybe (String), "ExpirationDate" :: Maybe (String) }
 ```
 
 <p>The definition for a provisioned capacity unit.</p>
@@ -2381,7 +2381,7 @@ Constructs ProvisionedCapacityDescription from required parameters
 #### `newProvisionedCapacityDescription'`
 
 ``` purescript
-newProvisionedCapacityDescription' :: ({ "CapacityId" :: NullOrUndefined (String), "StartDate" :: NullOrUndefined (String), "ExpirationDate" :: NullOrUndefined (String) } -> { "CapacityId" :: NullOrUndefined (String), "StartDate" :: NullOrUndefined (String), "ExpirationDate" :: NullOrUndefined (String) }) -> ProvisionedCapacityDescription
+newProvisionedCapacityDescription' :: ({ "CapacityId" :: Maybe (String), "StartDate" :: Maybe (String), "ExpirationDate" :: Maybe (String) } -> { "CapacityId" :: Maybe (String), "StartDate" :: Maybe (String), "ExpirationDate" :: Maybe (String) }) -> ProvisionedCapacityDescription
 ```
 
 Constructs ProvisionedCapacityDescription's fields from required parameters
@@ -2438,7 +2438,7 @@ Constructs PurchaseProvisionedCapacityInput's fields from required parameters
 
 ``` purescript
 newtype PurchaseProvisionedCapacityOutput
-  = PurchaseProvisionedCapacityOutput { capacityId :: NullOrUndefined (String) }
+  = PurchaseProvisionedCapacityOutput { capacityId :: Maybe (String) }
 ```
 
 ##### Instances
@@ -2461,7 +2461,7 @@ Constructs PurchaseProvisionedCapacityOutput from required parameters
 #### `newPurchaseProvisionedCapacityOutput'`
 
 ``` purescript
-newPurchaseProvisionedCapacityOutput' :: ({ capacityId :: NullOrUndefined (String) } -> { capacityId :: NullOrUndefined (String) }) -> PurchaseProvisionedCapacityOutput
+newPurchaseProvisionedCapacityOutput' :: ({ capacityId :: Maybe (String) } -> { capacityId :: Maybe (String) }) -> PurchaseProvisionedCapacityOutput
 ```
 
 Constructs PurchaseProvisionedCapacityOutput's fields from required parameters
@@ -2486,7 +2486,7 @@ Encode QuoteFields
 
 ``` purescript
 newtype RemoveTagsFromVaultInput
-  = RemoveTagsFromVaultInput { accountId :: String, vaultName :: String, "TagKeys" :: NullOrUndefined (TagKeyList) }
+  = RemoveTagsFromVaultInput { accountId :: String, vaultName :: String, "TagKeys" :: Maybe (TagKeyList) }
 ```
 
 <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>
@@ -2511,7 +2511,7 @@ Constructs RemoveTagsFromVaultInput from required parameters
 #### `newRemoveTagsFromVaultInput'`
 
 ``` purescript
-newRemoveTagsFromVaultInput' :: String -> String -> ({ accountId :: String, vaultName :: String, "TagKeys" :: NullOrUndefined (TagKeyList) } -> { accountId :: String, vaultName :: String, "TagKeys" :: NullOrUndefined (TagKeyList) }) -> RemoveTagsFromVaultInput
+newRemoveTagsFromVaultInput' :: String -> String -> ({ accountId :: String, vaultName :: String, "TagKeys" :: Maybe (TagKeyList) } -> { accountId :: String, vaultName :: String, "TagKeys" :: Maybe (TagKeyList) }) -> RemoveTagsFromVaultInput
 ```
 
 Constructs RemoveTagsFromVaultInput's fields from required parameters
@@ -2520,7 +2520,7 @@ Constructs RemoveTagsFromVaultInput's fields from required parameters
 
 ``` purescript
 newtype RequestTimeoutException
-  = RequestTimeoutException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = RequestTimeoutException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.</p>
@@ -2545,7 +2545,7 @@ Constructs RequestTimeoutException from required parameters
 #### `newRequestTimeoutException'`
 
 ``` purescript
-newRequestTimeoutException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> RequestTimeoutException
+newRequestTimeoutException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> RequestTimeoutException
 ```
 
 Constructs RequestTimeoutException's fields from required parameters
@@ -2554,7 +2554,7 @@ Constructs RequestTimeoutException's fields from required parameters
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = ResourceNotFoundException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
@@ -2579,7 +2579,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -2588,7 +2588,7 @@ Constructs ResourceNotFoundException's fields from required parameters
 
 ``` purescript
 newtype S3Location
-  = S3Location { "BucketName" :: NullOrUndefined (String), "Prefix" :: NullOrUndefined (String), "Encryption" :: NullOrUndefined (Encryption), "CannedACL" :: NullOrUndefined (CannedACL), "AccessControlList" :: NullOrUndefined (AccessControlPolicyList), "Tagging" :: NullOrUndefined (Hashmap'), "UserMetadata" :: NullOrUndefined (Hashmap'), "StorageClass" :: NullOrUndefined (StorageClass) }
+  = S3Location { "BucketName" :: Maybe (String), "Prefix" :: Maybe (String), "Encryption" :: Maybe (Encryption), "CannedACL" :: Maybe (CannedACL), "AccessControlList" :: Maybe (AccessControlPolicyList), "Tagging" :: Maybe (Hashmap'), "UserMetadata" :: Maybe (Hashmap'), "StorageClass" :: Maybe (StorageClass) }
 ```
 
 <p>Contains information about the location in Amazon S3 where the select job results are stored.</p>
@@ -2613,7 +2613,7 @@ Constructs S3Location from required parameters
 #### `newS3Location'`
 
 ``` purescript
-newS3Location' :: ({ "BucketName" :: NullOrUndefined (String), "Prefix" :: NullOrUndefined (String), "Encryption" :: NullOrUndefined (Encryption), "CannedACL" :: NullOrUndefined (CannedACL), "AccessControlList" :: NullOrUndefined (AccessControlPolicyList), "Tagging" :: NullOrUndefined (Hashmap'), "UserMetadata" :: NullOrUndefined (Hashmap'), "StorageClass" :: NullOrUndefined (StorageClass) } -> { "BucketName" :: NullOrUndefined (String), "Prefix" :: NullOrUndefined (String), "Encryption" :: NullOrUndefined (Encryption), "CannedACL" :: NullOrUndefined (CannedACL), "AccessControlList" :: NullOrUndefined (AccessControlPolicyList), "Tagging" :: NullOrUndefined (Hashmap'), "UserMetadata" :: NullOrUndefined (Hashmap'), "StorageClass" :: NullOrUndefined (StorageClass) }) -> S3Location
+newS3Location' :: ({ "BucketName" :: Maybe (String), "Prefix" :: Maybe (String), "Encryption" :: Maybe (Encryption), "CannedACL" :: Maybe (CannedACL), "AccessControlList" :: Maybe (AccessControlPolicyList), "Tagging" :: Maybe (Hashmap'), "UserMetadata" :: Maybe (Hashmap'), "StorageClass" :: Maybe (StorageClass) } -> { "BucketName" :: Maybe (String), "Prefix" :: Maybe (String), "Encryption" :: Maybe (Encryption), "CannedACL" :: Maybe (CannedACL), "AccessControlList" :: Maybe (AccessControlPolicyList), "Tagging" :: Maybe (Hashmap'), "UserMetadata" :: Maybe (Hashmap'), "StorageClass" :: Maybe (StorageClass) }) -> S3Location
 ```
 
 Constructs S3Location's fields from required parameters
@@ -2622,7 +2622,7 @@ Constructs S3Location's fields from required parameters
 
 ``` purescript
 newtype SelectParameters
-  = SelectParameters { "InputSerialization" :: NullOrUndefined (InputSerialization), "ExpressionType" :: NullOrUndefined (ExpressionType), "Expression" :: NullOrUndefined (String), "OutputSerialization" :: NullOrUndefined (OutputSerialization) }
+  = SelectParameters { "InputSerialization" :: Maybe (InputSerialization), "ExpressionType" :: Maybe (ExpressionType), "Expression" :: Maybe (String), "OutputSerialization" :: Maybe (OutputSerialization) }
 ```
 
 <p>Contains information about the parameters used for a select.</p>
@@ -2647,7 +2647,7 @@ Constructs SelectParameters from required parameters
 #### `newSelectParameters'`
 
 ``` purescript
-newSelectParameters' :: ({ "InputSerialization" :: NullOrUndefined (InputSerialization), "ExpressionType" :: NullOrUndefined (ExpressionType), "Expression" :: NullOrUndefined (String), "OutputSerialization" :: NullOrUndefined (OutputSerialization) } -> { "InputSerialization" :: NullOrUndefined (InputSerialization), "ExpressionType" :: NullOrUndefined (ExpressionType), "Expression" :: NullOrUndefined (String), "OutputSerialization" :: NullOrUndefined (OutputSerialization) }) -> SelectParameters
+newSelectParameters' :: ({ "InputSerialization" :: Maybe (InputSerialization), "ExpressionType" :: Maybe (ExpressionType), "Expression" :: Maybe (String), "OutputSerialization" :: Maybe (OutputSerialization) } -> { "InputSerialization" :: Maybe (InputSerialization), "ExpressionType" :: Maybe (ExpressionType), "Expression" :: Maybe (String), "OutputSerialization" :: Maybe (OutputSerialization) }) -> SelectParameters
 ```
 
 Constructs SelectParameters's fields from required parameters
@@ -2656,7 +2656,7 @@ Constructs SelectParameters's fields from required parameters
 
 ``` purescript
 newtype ServiceUnavailableException
-  = ServiceUnavailableException { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = ServiceUnavailableException { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Returned if the service cannot complete the request.</p>
@@ -2681,7 +2681,7 @@ Constructs ServiceUnavailableException from required parameters
 #### `newServiceUnavailableException'`
 
 ``` purescript
-newServiceUnavailableException' :: ({ "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { "type" :: NullOrUndefined (String), code :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> ServiceUnavailableException
+newServiceUnavailableException' :: ({ "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) } -> { "type" :: Maybe (String), code :: Maybe (String), message :: Maybe (String) }) -> ServiceUnavailableException
 ```
 
 Constructs ServiceUnavailableException's fields from required parameters
@@ -2690,7 +2690,7 @@ Constructs ServiceUnavailableException's fields from required parameters
 
 ``` purescript
 newtype SetDataRetrievalPolicyInput
-  = SetDataRetrievalPolicyInput { accountId :: String, "Policy" :: NullOrUndefined (DataRetrievalPolicy) }
+  = SetDataRetrievalPolicyInput { accountId :: String, "Policy" :: Maybe (DataRetrievalPolicy) }
 ```
 
 <p>SetDataRetrievalPolicy input.</p>
@@ -2715,7 +2715,7 @@ Constructs SetDataRetrievalPolicyInput from required parameters
 #### `newSetDataRetrievalPolicyInput'`
 
 ``` purescript
-newSetDataRetrievalPolicyInput' :: String -> ({ accountId :: String, "Policy" :: NullOrUndefined (DataRetrievalPolicy) } -> { accountId :: String, "Policy" :: NullOrUndefined (DataRetrievalPolicy) }) -> SetDataRetrievalPolicyInput
+newSetDataRetrievalPolicyInput' :: String -> ({ accountId :: String, "Policy" :: Maybe (DataRetrievalPolicy) } -> { accountId :: String, "Policy" :: Maybe (DataRetrievalPolicy) }) -> SetDataRetrievalPolicyInput
 ```
 
 Constructs SetDataRetrievalPolicyInput's fields from required parameters
@@ -2724,7 +2724,7 @@ Constructs SetDataRetrievalPolicyInput's fields from required parameters
 
 ``` purescript
 newtype SetVaultAccessPolicyInput
-  = SetVaultAccessPolicyInput { accountId :: String, vaultName :: String, policy :: NullOrUndefined (VaultAccessPolicy) }
+  = SetVaultAccessPolicyInput { accountId :: String, vaultName :: String, policy :: Maybe (VaultAccessPolicy) }
 ```
 
 <p>SetVaultAccessPolicy input.</p>
@@ -2749,7 +2749,7 @@ Constructs SetVaultAccessPolicyInput from required parameters
 #### `newSetVaultAccessPolicyInput'`
 
 ``` purescript
-newSetVaultAccessPolicyInput' :: String -> String -> ({ accountId :: String, vaultName :: String, policy :: NullOrUndefined (VaultAccessPolicy) } -> { accountId :: String, vaultName :: String, policy :: NullOrUndefined (VaultAccessPolicy) }) -> SetVaultAccessPolicyInput
+newSetVaultAccessPolicyInput' :: String -> String -> ({ accountId :: String, vaultName :: String, policy :: Maybe (VaultAccessPolicy) } -> { accountId :: String, vaultName :: String, policy :: Maybe (VaultAccessPolicy) }) -> SetVaultAccessPolicyInput
 ```
 
 Constructs SetVaultAccessPolicyInput's fields from required parameters
@@ -2758,7 +2758,7 @@ Constructs SetVaultAccessPolicyInput's fields from required parameters
 
 ``` purescript
 newtype SetVaultNotificationsInput
-  = SetVaultNotificationsInput { accountId :: String, vaultName :: String, vaultNotificationConfig :: NullOrUndefined (VaultNotificationConfig) }
+  = SetVaultNotificationsInput { accountId :: String, vaultName :: String, vaultNotificationConfig :: Maybe (VaultNotificationConfig) }
 ```
 
 <p>Provides options to configure notifications that will be sent when specific events happen to a vault.</p>
@@ -2783,7 +2783,7 @@ Constructs SetVaultNotificationsInput from required parameters
 #### `newSetVaultNotificationsInput'`
 
 ``` purescript
-newSetVaultNotificationsInput' :: String -> String -> ({ accountId :: String, vaultName :: String, vaultNotificationConfig :: NullOrUndefined (VaultNotificationConfig) } -> { accountId :: String, vaultName :: String, vaultNotificationConfig :: NullOrUndefined (VaultNotificationConfig) }) -> SetVaultNotificationsInput
+newSetVaultNotificationsInput' :: String -> String -> ({ accountId :: String, vaultName :: String, vaultNotificationConfig :: Maybe (VaultNotificationConfig) } -> { accountId :: String, vaultName :: String, vaultNotificationConfig :: Maybe (VaultNotificationConfig) }) -> SetVaultNotificationsInput
 ```
 
 Constructs SetVaultNotificationsInput's fields from required parameters
@@ -2936,7 +2936,7 @@ Encode Type
 
 ``` purescript
 newtype UploadArchiveInput
-  = UploadArchiveInput { vaultName :: String, accountId :: String, archiveDescription :: NullOrUndefined (String), checksum :: NullOrUndefined (String), body :: NullOrUndefined (Stream) }
+  = UploadArchiveInput { vaultName :: String, accountId :: String, archiveDescription :: Maybe (String), checksum :: Maybe (String), body :: Maybe (Stream) }
 ```
 
 <p>Provides options to add an archive to a vault.</p>
@@ -2961,7 +2961,7 @@ Constructs UploadArchiveInput from required parameters
 #### `newUploadArchiveInput'`
 
 ``` purescript
-newUploadArchiveInput' :: String -> String -> ({ vaultName :: String, accountId :: String, archiveDescription :: NullOrUndefined (String), checksum :: NullOrUndefined (String), body :: NullOrUndefined (Stream) } -> { vaultName :: String, accountId :: String, archiveDescription :: NullOrUndefined (String), checksum :: NullOrUndefined (String), body :: NullOrUndefined (Stream) }) -> UploadArchiveInput
+newUploadArchiveInput' :: String -> String -> ({ vaultName :: String, accountId :: String, archiveDescription :: Maybe (String), checksum :: Maybe (String), body :: Maybe (Stream) } -> { vaultName :: String, accountId :: String, archiveDescription :: Maybe (String), checksum :: Maybe (String), body :: Maybe (Stream) }) -> UploadArchiveInput
 ```
 
 Constructs UploadArchiveInput's fields from required parameters
@@ -2970,7 +2970,7 @@ Constructs UploadArchiveInput's fields from required parameters
 
 ``` purescript
 newtype UploadListElement
-  = UploadListElement { "MultipartUploadId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "ArchiveDescription" :: NullOrUndefined (String), "PartSizeInBytes" :: NullOrUndefined (Number), "CreationDate" :: NullOrUndefined (String) }
+  = UploadListElement { "MultipartUploadId" :: Maybe (String), "VaultARN" :: Maybe (String), "ArchiveDescription" :: Maybe (String), "PartSizeInBytes" :: Maybe (Number), "CreationDate" :: Maybe (String) }
 ```
 
 <p>A list of in-progress multipart uploads for a vault.</p>
@@ -2995,7 +2995,7 @@ Constructs UploadListElement from required parameters
 #### `newUploadListElement'`
 
 ``` purescript
-newUploadListElement' :: ({ "MultipartUploadId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "ArchiveDescription" :: NullOrUndefined (String), "PartSizeInBytes" :: NullOrUndefined (Number), "CreationDate" :: NullOrUndefined (String) } -> { "MultipartUploadId" :: NullOrUndefined (String), "VaultARN" :: NullOrUndefined (String), "ArchiveDescription" :: NullOrUndefined (String), "PartSizeInBytes" :: NullOrUndefined (Number), "CreationDate" :: NullOrUndefined (String) }) -> UploadListElement
+newUploadListElement' :: ({ "MultipartUploadId" :: Maybe (String), "VaultARN" :: Maybe (String), "ArchiveDescription" :: Maybe (String), "PartSizeInBytes" :: Maybe (Number), "CreationDate" :: Maybe (String) } -> { "MultipartUploadId" :: Maybe (String), "VaultARN" :: Maybe (String), "ArchiveDescription" :: Maybe (String), "PartSizeInBytes" :: Maybe (Number), "CreationDate" :: Maybe (String) }) -> UploadListElement
 ```
 
 Constructs UploadListElement's fields from required parameters
@@ -3004,7 +3004,7 @@ Constructs UploadListElement's fields from required parameters
 
 ``` purescript
 newtype UploadMultipartPartInput
-  = UploadMultipartPartInput { accountId :: String, vaultName :: String, uploadId :: String, checksum :: NullOrUndefined (String), range :: NullOrUndefined (String), body :: NullOrUndefined (Stream) }
+  = UploadMultipartPartInput { accountId :: String, vaultName :: String, uploadId :: String, checksum :: Maybe (String), range :: Maybe (String), body :: Maybe (Stream) }
 ```
 
 <p>Provides options to upload a part of an archive in a multipart upload operation.</p>
@@ -3029,7 +3029,7 @@ Constructs UploadMultipartPartInput from required parameters
 #### `newUploadMultipartPartInput'`
 
 ``` purescript
-newUploadMultipartPartInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, uploadId :: String, checksum :: NullOrUndefined (String), range :: NullOrUndefined (String), body :: NullOrUndefined (Stream) } -> { accountId :: String, vaultName :: String, uploadId :: String, checksum :: NullOrUndefined (String), range :: NullOrUndefined (String), body :: NullOrUndefined (Stream) }) -> UploadMultipartPartInput
+newUploadMultipartPartInput' :: String -> String -> String -> ({ accountId :: String, vaultName :: String, uploadId :: String, checksum :: Maybe (String), range :: Maybe (String), body :: Maybe (Stream) } -> { accountId :: String, vaultName :: String, uploadId :: String, checksum :: Maybe (String), range :: Maybe (String), body :: Maybe (Stream) }) -> UploadMultipartPartInput
 ```
 
 Constructs UploadMultipartPartInput's fields from required parameters
@@ -3038,7 +3038,7 @@ Constructs UploadMultipartPartInput's fields from required parameters
 
 ``` purescript
 newtype UploadMultipartPartOutput
-  = UploadMultipartPartOutput { checksum :: NullOrUndefined (String) }
+  = UploadMultipartPartOutput { checksum :: Maybe (String) }
 ```
 
 <p>Contains the Amazon Glacier response to your request.</p>
@@ -3063,7 +3063,7 @@ Constructs UploadMultipartPartOutput from required parameters
 #### `newUploadMultipartPartOutput'`
 
 ``` purescript
-newUploadMultipartPartOutput' :: ({ checksum :: NullOrUndefined (String) } -> { checksum :: NullOrUndefined (String) }) -> UploadMultipartPartOutput
+newUploadMultipartPartOutput' :: ({ checksum :: Maybe (String) } -> { checksum :: Maybe (String) }) -> UploadMultipartPartOutput
 ```
 
 Constructs UploadMultipartPartOutput's fields from required parameters
@@ -3088,7 +3088,7 @@ Encode UploadsList
 
 ``` purescript
 newtype VaultAccessPolicy
-  = VaultAccessPolicy { "Policy" :: NullOrUndefined (String) }
+  = VaultAccessPolicy { "Policy" :: Maybe (String) }
 ```
 
 <p>Contains the vault access policy.</p>
@@ -3113,7 +3113,7 @@ Constructs VaultAccessPolicy from required parameters
 #### `newVaultAccessPolicy'`
 
 ``` purescript
-newVaultAccessPolicy' :: ({ "Policy" :: NullOrUndefined (String) } -> { "Policy" :: NullOrUndefined (String) }) -> VaultAccessPolicy
+newVaultAccessPolicy' :: ({ "Policy" :: Maybe (String) } -> { "Policy" :: Maybe (String) }) -> VaultAccessPolicy
 ```
 
 Constructs VaultAccessPolicy's fields from required parameters
@@ -3138,7 +3138,7 @@ Encode VaultList
 
 ``` purescript
 newtype VaultLockPolicy
-  = VaultLockPolicy { "Policy" :: NullOrUndefined (String) }
+  = VaultLockPolicy { "Policy" :: Maybe (String) }
 ```
 
 <p>Contains the vault lock policy.</p>
@@ -3163,7 +3163,7 @@ Constructs VaultLockPolicy from required parameters
 #### `newVaultLockPolicy'`
 
 ``` purescript
-newVaultLockPolicy' :: ({ "Policy" :: NullOrUndefined (String) } -> { "Policy" :: NullOrUndefined (String) }) -> VaultLockPolicy
+newVaultLockPolicy' :: ({ "Policy" :: Maybe (String) } -> { "Policy" :: Maybe (String) }) -> VaultLockPolicy
 ```
 
 Constructs VaultLockPolicy's fields from required parameters
@@ -3172,7 +3172,7 @@ Constructs VaultLockPolicy's fields from required parameters
 
 ``` purescript
 newtype VaultNotificationConfig
-  = VaultNotificationConfig { "SNSTopic" :: NullOrUndefined (String), "Events" :: NullOrUndefined (NotificationEventList) }
+  = VaultNotificationConfig { "SNSTopic" :: Maybe (String), "Events" :: Maybe (NotificationEventList) }
 ```
 
 <p>Represents a vault's notification configuration.</p>
@@ -3197,7 +3197,7 @@ Constructs VaultNotificationConfig from required parameters
 #### `newVaultNotificationConfig'`
 
 ``` purescript
-newVaultNotificationConfig' :: ({ "SNSTopic" :: NullOrUndefined (String), "Events" :: NullOrUndefined (NotificationEventList) } -> { "SNSTopic" :: NullOrUndefined (String), "Events" :: NullOrUndefined (NotificationEventList) }) -> VaultNotificationConfig
+newVaultNotificationConfig' :: ({ "SNSTopic" :: Maybe (String), "Events" :: Maybe (NotificationEventList) } -> { "SNSTopic" :: Maybe (String), "Events" :: Maybe (NotificationEventList) }) -> VaultNotificationConfig
 ```
 
 Constructs VaultNotificationConfig's fields from required parameters
